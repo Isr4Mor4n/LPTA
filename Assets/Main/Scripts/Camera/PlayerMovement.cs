@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
         {
             anykeyPressed = true;
             direction += -cameraTransform.forward;
-            Debug.Log("atrs");
+            Debug.Log("atras");
         }
         if (Input.GetKey(KeyCode.D))
         {
