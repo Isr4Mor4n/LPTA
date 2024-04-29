@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3708985, g: 0.3783704, b: 0.35722548, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -599,6 +599,7 @@ GameObject:
   - component: {fileID: 71578686}
   - component: {fileID: 71578688}
   - component: {fileID: 71578689}
+  - component: {fileID: 71578690}
   m_Layer: 0
   m_Name: Trigger Sector 1
   m_TagString: Untagged
@@ -656,6 +657,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraToActivate: {fileID: 375432108}
   associatedCamera: {fileID: 375432111}
+--- !u!114 &71578690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71578685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraRotator: {fileID: 1436439991}
+  selfCamera: {fileID: 375432108}
 --- !u!1 &85334796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1522,6 +1537,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 54ba2b90022b03d4c8c3b9d41f9a5615, type: 3}
       insertIndex: -1
       addedObject: {fileID: 140556895}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 54ba2b90022b03d4c8c3b9d41f9a5615, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 140556896}
   m_SourcePrefab: {fileID: 100100000, guid: 54ba2b90022b03d4c8c3b9d41f9a5615, type: 3}
 --- !u!1 &140556886 stripped
 GameObject:
@@ -1684,6 +1702,20 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &140556896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140556886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d3c2a452ee33d64aa9f8edb6007144c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  cameraTransform: {fileID: 1436439991}
 --- !u!4 &161686537 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 279b5cefc0365834fb6e15abc66b12c1, type: 3}
@@ -2245,6 +2277,7 @@ GameObject:
   - component: {fileID: 209251366}
   - component: {fileID: 209251368}
   - component: {fileID: 209251367}
+  - component: {fileID: 209251369}
   m_Layer: 0
   m_Name: Trigger Sector 3A
   m_TagString: Untagged
@@ -2302,6 +2335,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.1380763, y: 0.7439718, z: 8.268436}
   m_Center: {x: -2.6261399, y: 2.273375, z: 9.361262}
+--- !u!114 &209251369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209251365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraRotator: {fileID: 831737709}
+  selfCamera: {fileID: 1170729528}
 --- !u!1 &211756854
 GameObject:
   m_ObjectHideFlags: 0
@@ -2313,6 +2360,7 @@ GameObject:
   - component: {fileID: 211756855}
   - component: {fileID: 211756857}
   - component: {fileID: 211756856}
+  - component: {fileID: 211756858}
   m_Layer: 0
   m_Name: Trigger Sector 2Cs
   m_TagString: Untagged
@@ -2370,6 +2418,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.3109274, y: 0.7439718, z: 4.1744785}
   m_Center: {x: -3.4409604, y: 2.273375, z: -20.454338}
+--- !u!114 &211756858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211756854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraRotator: {fileID: 867547905}
+  selfCamera: {fileID: 1224940520}
 --- !u!1 &216168419
 GameObject:
   m_ObjectHideFlags: 0
@@ -2745,6 +2807,7 @@ GameObject:
   - component: {fileID: 232255626}
   - component: {fileID: 232255628}
   - component: {fileID: 232255627}
+  - component: {fileID: 232255629}
   m_Layer: 0
   m_Name: Trigger Sector 1B
   m_TagString: Untagged
@@ -2802,6 +2865,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.9648294, y: 0.7439718, z: 8.668259}
   m_Center: {x: -3.7925372, y: 2.273375, z: 0.9016669}
+--- !u!114 &232255629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232255625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraRotator: {fileID: 1428603312}
+  selfCamera: {fileID: 1985370627}
 --- !u!1 &238745074
 GameObject:
   m_ObjectHideFlags: 0
@@ -3069,6 +3146,7 @@ GameObject:
   - component: {fileID: 334358658}
   - component: {fileID: 334358660}
   - component: {fileID: 334358659}
+  - component: {fileID: 334358661}
   m_Layer: 0
   m_Name: Trigger Sector 2B
   m_TagString: Untagged
@@ -3126,6 +3204,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.937683, y: 0.7439718, z: 10.220943}
   m_Center: {x: -3.7962399, y: 2.273375, z: -8.541235}
+--- !u!114 &334358661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334358657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraRotator: {fileID: 138950718}
+  selfCamera: {fileID: 1892685602}
 --- !u!1 &337890417
 GameObject:
   m_ObjectHideFlags: 0
@@ -5617,6 +5709,7 @@ GameObject:
   - component: {fileID: 586657701}
   - component: {fileID: 586657703}
   - component: {fileID: 586657702}
+  - component: {fileID: 586657704}
   m_Layer: 0
   m_Name: Trigger Sector 4B
   m_TagString: Untagged
@@ -5674,6 +5767,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.943436, y: 0.7439718, z: 8.918256}
   m_Center: {x: -3.7895687, y: 2.273375, z: 17.964952}
+--- !u!114 &586657704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586657700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraRotator: {fileID: 889743601}
+  selfCamera: {fileID: 1527677801}
 --- !u!1 &587987743
 GameObject:
   m_ObjectHideFlags: 0
@@ -7764,6 +7871,7 @@ GameObject:
   - component: {fileID: 841978069}
   - component: {fileID: 841978071}
   - component: {fileID: 841978070}
+  - component: {fileID: 841978072}
   m_Layer: 0
   m_Name: Trigger Sector 4C
   m_TagString: Untagged
@@ -7821,6 +7929,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.026016, y: 0.7439718, z: 7.009877}
   m_Center: {x: 2.1970406, y: 2.273375, z: 17.186346}
+--- !u!114 &841978072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841978068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraRotator: {fileID: 2098076705}
+  selfCamera: {fileID: 222087577}
 --- !u!1 &852336840
 GameObject:
   m_ObjectHideFlags: 0
@@ -8574,6 +8696,7 @@ GameObject:
   - component: {fileID: 918074251}
   - component: {fileID: 918074253}
   - component: {fileID: 918074252}
+  - component: {fileID: 918074254}
   m_Layer: 0
   m_Name: Trigger Sector 3B
   m_TagString: Untagged
@@ -8631,6 +8754,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.967596, y: 0.7439718, z: 8.278036}
   m_Center: {x: -3.790081, y: 2.273375, z: 9.385489}
+--- !u!114 &918074254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918074250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraRotator: {fileID: 1202380930}
+  selfCamera: {fileID: 1492318359}
 --- !u!1 &932562273
 GameObject:
   m_ObjectHideFlags: 0
@@ -8961,6 +9098,7 @@ GameObject:
   - component: {fileID: 958425932}
   - component: {fileID: 958425934}
   - component: {fileID: 958425933}
+  - component: {fileID: 958425935}
   m_Layer: 0
   m_Name: Trigger Sector 2C
   m_TagString: Untagged
@@ -9018,6 +9156,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.3109274, y: 0.7439718, z: 4.79545}
   m_Center: {x: -3.4409604, y: 2.273375, z: -15.990558}
+--- !u!114 &958425935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958425931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraRotator: {fileID: 587987744}
+  selfCamera: {fileID: 415245695}
 --- !u!1 &972244291
 GameObject:
   m_ObjectHideFlags: 0
@@ -10443,6 +10595,7 @@ GameObject:
   - component: {fileID: 1174744275}
   - component: {fileID: 1174744277}
   - component: {fileID: 1174744276}
+  - component: {fileID: 1174744278}
   m_Layer: 0
   m_Name: Trigger Sector 1A
   m_TagString: Untagged
@@ -10500,6 +10653,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.0427623, y: 0.7439718, z: 8.649546}
   m_Center: {x: -2.8315036, y: 2.273375, z: 0.91102314}
+--- !u!114 &1174744278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174744274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraRotator: {fileID: 2135138955}
+  selfCamera: {fileID: 1786592290}
 --- !u!1 &1184256333
 GameObject:
   m_ObjectHideFlags: 0
@@ -12160,6 +12327,7 @@ GameObject:
   - component: {fileID: 1385803883}
   - component: {fileID: 1385803884}
   - component: {fileID: 1385803885}
+  - component: {fileID: 1385803886}
   m_Layer: 0
   m_Name: Trigger Sector 4
   m_TagString: Untagged
@@ -12217,6 +12385,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraToActivate: {fileID: 827051912}
   associatedCamera: {fileID: 827051914}
+--- !u!114 &1385803886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385803882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraRotator: {fileID: 2052737865}
+  selfCamera: {fileID: 827051912}
 --- !u!1 &1392590440
 GameObject:
   m_ObjectHideFlags: 0
@@ -12228,6 +12410,7 @@ GameObject:
   - component: {fileID: 1392590441}
   - component: {fileID: 1392590443}
   - component: {fileID: 1392590442}
+  - component: {fileID: 1392590444}
   m_Layer: 0
   m_Name: Trigger Sector 1C
   m_TagString: Untagged
@@ -12285,6 +12468,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.9660463, y: 0.7439718, z: 6.9828167}
   m_Center: {x: 2.2270494, y: 2.273375, z: 0.058945656}
+--- !u!114 &1392590444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392590440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraRotator: {fileID: 476486607}
+  selfCamera: {fileID: 408066516}
 --- !u!1 &1404774633
 GameObject:
   m_ObjectHideFlags: 0
@@ -14016,6 +14213,7 @@ GameObject:
   - component: {fileID: 1632890626}
   - component: {fileID: 1632890627}
   - component: {fileID: 1632890628}
+  - component: {fileID: 1632890629}
   m_Layer: 0
   m_Name: Trigger Sector 3
   m_TagString: Untagged
@@ -14073,6 +14271,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraToActivate: {fileID: 428818238}
   associatedCamera: {fileID: 428818241}
+--- !u!114 &1632890629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632890625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraRotator: {fileID: 454927137}
+  selfCamera: {fileID: 428818238}
 --- !u!1 &1637482736
 GameObject:
   m_ObjectHideFlags: 0
@@ -16351,6 +16563,7 @@ GameObject:
   - component: {fileID: 1812996639}
   - component: {fileID: 1812996641}
   - component: {fileID: 1812996640}
+  - component: {fileID: 1812996642}
   m_Layer: 0
   m_Name: Trigger Sector 4A
   m_TagString: Untagged
@@ -16408,6 +16621,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.1478195, y: 0.7439718, z: 8.923035}
   m_Center: {x: -2.6100607, y: 2.273375, z: 17.962563}
+--- !u!114 &1812996642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812996638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraRotator: {fileID: 542199473}
+  selfCamera: {fileID: 636289510}
 --- !u!1 &1817100884
 GameObject:
   m_ObjectHideFlags: 0
@@ -16828,6 +17055,7 @@ GameObject:
   - component: {fileID: 1881935693}
   - component: {fileID: 1881935695}
   - component: {fileID: 1881935696}
+  - component: {fileID: 1881935697}
   m_Layer: 0
   m_Name: Trigger Sector 2
   m_TagString: Untagged
@@ -16885,6 +17113,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraToActivate: {fileID: 1020084912}
   associatedCamera: {fileID: 1020084915}
+--- !u!114 &1881935697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881935692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraRotator: {fileID: 1623803852}
+  selfCamera: {fileID: 1020084912}
 --- !u!1 &1892685602
 GameObject:
   m_ObjectHideFlags: 0
@@ -18592,6 +18834,7 @@ GameObject:
   - component: {fileID: 2122332209}
   - component: {fileID: 2122332211}
   - component: {fileID: 2122332210}
+  - component: {fileID: 2122332212}
   m_Layer: 0
   m_Name: Trigger Sector 2A
   m_TagString: Untagged
@@ -18649,6 +18892,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.1488457, y: 0.7439718, z: 10.213911}
   m_Center: {x: -2.64326, y: 2.273375, z: -8.565653}
+--- !u!114 &2122332212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122332208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraRotator: {fileID: 2117766840}
+  selfCamera: {fileID: 544933846}
 --- !u!1 &2125403683
 GameObject:
   m_ObjectHideFlags: 0
