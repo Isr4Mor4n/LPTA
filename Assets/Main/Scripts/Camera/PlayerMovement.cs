@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class PlayerMovement : MonoBehaviour
 {
     CharacterController cc;
@@ -20,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.tag == "cameraChanger")
         {
-            other.GetComponent<CameraChanger>().Activate();
+            //other.GetComponent<CameraChanger>().Activate();
             newCameraTransform = other.GetComponent<CameraChanger>().cameraRotator;
             cameraMustChange = true;
         }
@@ -30,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.tag == "cameraChanger")
         {
-            other.GetComponent<CameraChanger>().Deactivate();
+           //other.GetComponent<CameraChanger>().Deactivate();
         }
     }
 

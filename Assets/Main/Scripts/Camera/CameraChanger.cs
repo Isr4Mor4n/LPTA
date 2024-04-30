@@ -7,12 +7,12 @@ public class CameraChanger : MonoBehaviour
     public Transform cameraRotator;
     public GameObject selfCamera;
 
-    public void Activate()
+    private void OnTriggerEnter(Collider other)
     {
         selfCamera.SetActive(true);
     }
 
-    public void Deactivate()
+    private void OnTriggerExit(Collider other)
     {
         selfCamera.SetActive(false);
     }
