@@ -8,7 +8,7 @@ public class LightFlicker : MonoBehaviour
     [SerializeField] private float MinTime;
     [SerializeField] private float MaxTime;
 
-    private float[] intensities = { 4.5f, 1.5f, 0f };
+    private float[] intensities = { 10.0f, 1.5f, 0f };
 
     void Start()
     {
