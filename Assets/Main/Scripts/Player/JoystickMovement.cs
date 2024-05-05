@@ -7,14 +7,14 @@ public class JoystickMovement : MonoBehaviour
 {
     Vector2 moveVector;
     [SerializeField] float moveSpeed = 8f;
-    Camera currentCamera; // Cámara actual del jugador
-    [SerializeField] List<Camera> associatedCameras = new List<Camera>(); // Lista de cámaras asociadas a los triggers
-
+    [SerializeField] Camera currentCamera;
     [SerializeField] Animator _animator;
+    [SerializeField] CharacterController characterController;
 
     void Start()
     {
         _animator = GetComponent<Animator>();
+        characterController = GetComponent<CharacterController>();
     }
 
     public void InputPlayer(InputAction.CallbackContext _context)
@@ -22,8 +22,7 @@ public class JoystickMovement : MonoBehaviour
         moveVector = _context.ReadValue<Vector2>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (currentCamera == null)
         {
@@ -31,46 +30,44 @@ public class JoystickMovement : MonoBehaviour
             return;
         }
 
-        Vector3 cameraForward = currentCamera.transform.forward;
-        cameraForward.y = 0f; // Asegúrate de que el vector no tenga componente Y (vertical)
-        cameraForward.Normalize();
-
-        // Transforma el vector de movimiento global al espacio de la cámara
-        Vector3 movementRelativeToCamera = cameraForward * moveVector.y + currentCamera.transform.right * moveVector.x;
-
-        movementRelativeToCamera.Normalize();
-        transform.Translate(moveSpeed * movementRelativeToCamera * Time.deltaTime, Space.World);
-
-        #region ANIMATIONS
-
-        if (movementRelativeToCamera == Vector3.zero)
+        if (moveVector != Vector2.zero)
         {
-            // IDLE
-            _animator.SetFloat("Speed", 0);
+            // Obtener las direcciones locales de la cámara actual
+            Vector3 forwardDirection = currentCamera.transform.forward;
+            Vector3 rightDirection = currentCamera.transform.right;
+
+            // Asegurar que las direcciones no tengan componente vertical
+            forwardDirection.y = 0f;
+            rightDirection.y = 0f;
+
+            // Normalizar las direcciones
+            forwardDirection.Normalize();
+            rightDirection.Normalize();
+
+            // Calcular el vector de movimiento local basado en las direcciones de la cámara
+            Vector3 movement = forwardDirection * moveVector.y + rightDirection * moveVector.x;
+
+            // Normalizar el vector de movimiento
+            movement.Normalize();
+
+            // Mover al jugador en la dirección local
+            characterController.Move(moveSpeed * Time.fixedDeltaTime * movement);
+
+            // Establecer la velocidad de la animación de acuerdo al movimiento
+            _animator.SetFloat("Speed", 1);
         }
         else
         {
-            _animator.SetFloat("Speed", 1);
-        }
+            // Si no hay entrada del joystick, detener el movimiento estableciendo la velocidad a cero
+            characterController.SimpleMove(Vector3.zero);
 
-        #endregion
+            // Establecer la velocidad de la animación en cero
+            _animator.SetFloat("Speed", 0);
+        }
     }
 
-    // Método para establecer la cámara actual del jugador
     public void SetCurrentCamera(Camera newCamera)
     {
         currentCamera = newCamera;
-    }
-
-    // Método para agregar una cámara asociada a los triggers
-    public void AddAssociatedCamera(Camera camera)
-    {
-        associatedCameras.Add(camera);
-    }
-
-    // Método para eliminar una cámara asociada a los triggers
-    public void RemoveAssociatedCamera(Camera camera)
-    {
-        associatedCameras.Remove(camera);
     }
 }
