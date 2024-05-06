@@ -1587,24 +1587,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2.5
-  associatedCameras:
-  - {fileID: 375432111}
-  - {fileID: 1786592292}
-  - {fileID: 1985370630}
-  - {fileID: 408066519}
-  - {fileID: 1020084915}
-  - {fileID: 544933848}
-  - {fileID: 1892685604}
-  - {fileID: 415245698}
-  - {fileID: 1224940523}
-  - {fileID: 428818241}
-  - {fileID: 1170729530}
-  - {fileID: 1492318361}
-  - {fileID: 827051914}
-  - {fileID: 636289512}
-  - {fileID: 1527677803}
-  - {fileID: 222087580}
+  currentCamera: {fileID: 0}
   _animator: {fileID: 140556894}
+  characterController: {fileID: 0}
 --- !u!4 &140556893 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 54ba2b90022b03d4c8c3b9d41f9a5615, type: 3}
@@ -17775,12 +17760,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c044727dee0682c44a8317e051a5af7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  correctUI: {fileID: 0}
+  incorrectUI: {fileID: 0}
   puzzleUI: {fileID: 547981200}
   colorButtons:
   - {fileID: 209115199}
   - {fileID: 619274403}
   - {fileID: 761036897}
   closeButton: {fileID: 337890418}
+  countdown: {fileID: 0}
 --- !u!4 &2028608436
 Transform:
   m_ObjectHideFlags: 0
