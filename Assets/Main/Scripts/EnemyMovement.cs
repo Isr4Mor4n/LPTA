@@ -16,6 +16,7 @@ public class EnemyMovement : MonoBehaviour
     private Transform player;
     private bool playerDetected = false;
     private int nearestWaypointIndex;
+    [SerializeField] Animator _animator;
 
     private void Start()
     {
@@ -25,6 +26,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
+
         if (!playerDetected)
             MoveTowardsWaypoint();
         else
@@ -47,6 +49,7 @@ public class EnemyMovement : MonoBehaviour
         {
             moveDirection.Normalize();
             characterController.Move(moveDirection * speed * Time.deltaTime);
+            // Establecer la velocidad de la animación de acuerdo al movimiento
         }
     }
 
@@ -64,12 +67,15 @@ public class EnemyMovement : MonoBehaviour
         {
             moveDirection.Normalize();
             characterController.Move(moveDirection * speed * Time.deltaTime);
+
         }
     }
 
     private void SetNextWaypoint()
     {
         currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+        _animator.SetFloat("WalkSpeed", 1);
+
     }
 
     private void DetectPlayer()
