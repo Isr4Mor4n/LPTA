@@ -24,5 +24,12 @@ public class ObjectActivator : MonoBehaviour
                 obj.SetActive(true);
             }
         }
+        else
+        {
+            foreach (GameObject obj in objectsToActivate)
+            {
+                obj.SetActive(false);
+            }
+        }
     }
 }
