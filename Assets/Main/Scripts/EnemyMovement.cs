@@ -75,7 +75,6 @@ public class EnemyMovement : MonoBehaviour
     {
         currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
         _animator.SetFloat("WalkSpeed", 1);
-
     }
 
     private void DetectPlayer()
