@@ -15,9 +15,9 @@ public class PuzzleColorManager : MonoBehaviour
 
     private int[] correctOrder = { 0, 1, 2, 3 }; // Orden correcto de los botones de colores
     private int currentIndex = 0; // Índice actual del botón que el jugador debe presionar
-    public static event Action OnPuzzleSolved;
+    public static event Action OnPuzzleColorSolved;
     private int[] pressedOrder = new int[4];
-    
+    public bool _colorSolved = false;
 
     private void Start()
     {
@@ -36,22 +36,6 @@ public class PuzzleColorManager : MonoBehaviour
             colorButtons[i].onClick.AddListener(() => OnColorButtonClicked(buttonIndex));
         }
     }
-
-    /*
-    public void ShowUI()
-    {
-        puzzleUI.SetActive(true); // Muestra la interfaz de usuario
-
-        // Asigna los métodos de los botones
-        for (int i = 0; i < colorButtons.Length; i++)
-        {
-            int buttonIndex = i; // Captura el índice para el cierre del bucle
-            colorButtons[i].onClick.AddListener(() => OnColorButtonClicked(buttonIndex));
-        }
-
-        closeButton.onClick.AddListener(HideUI); // Asigna el método para cerrar la UI
-    }
-    */
 
     private void HideUI()
     {
@@ -82,36 +66,9 @@ public class PuzzleColorManager : MonoBehaviour
         incorrectUI.SetActive(false);
     }
 
-    /*
-    private void HideUI()
-    {
-        puzzleUI.SetActive(false); // Oculta la interfaz de usuario
-    }
-    */
-
     private void OnColorButtonClicked(int buttonIndex)
     {
-        /*
-        if (buttonIndex == correctOrder[currentIndex])
-        {
-            currentIndex++; // Incrementa el índice correcto si el botón presionado es el correcto
-
-            if (currentIndex >= correctOrder.Length)
-            {
-                // El jugador ha presionado los botones en el orden correcto
-                Debug.Log("¡Puzzle resuelto!");
-                HideUI(); // Cierra la UI
-                currentIndex = 0; // Reinicia el índice para el próximo intento
-            }
-        }
-        else
-        {
-            // El jugador ha presionado un botón incorrecto
-            Debug.Log("¡Incorrecto! Intenta de nuevo.");
-            currentIndex = 0; // Reinicia el índice
-        }
-        */
-
+       
         if (currentIndex < correctOrder.Length)
         {
             pressedOrder[currentIndex] = buttonIndex;
@@ -124,7 +81,8 @@ public class PuzzleColorManager : MonoBehaviour
 
                     Debug.Log("¡Puzzle resuelto!");
                     CorrectShow();
-                    OnPuzzleSolved?.Invoke();  // Dispara el evento
+                    OnPuzzleColorSolved?.Invoke();  // Dispara el evento
+                    _colorSolved = true;
                     HideUI();
                 }
                 else

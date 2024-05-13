@@ -15,9 +15,9 @@ public class PuzzleStarsManager : MonoBehaviour
 
     public Countdown countdown;  // Referencia al script Countdown
 
-    private int[] correctOrder = { 0, 1}; // Orden correcto de los botones de colores
+    private int[] correctOrder = { 1, 3}; // Orden correcto de los botones de colores
     private int currentIndex = 0; // Índice actual del botón que el jugador debe presionar
-    public static event Action OnPuzzleSolved;
+    public static event Action OnPuzzleStarsSolved;
     private int[] pressedOrder = new int[4];
 
 
@@ -83,9 +83,9 @@ public class PuzzleStarsManager : MonoBehaviour
                 {
 
                     Debug.Log("¡Puzzle resuelto!");
-                    CorrectShow();
-                    OnPuzzleSolved?.Invoke();  // Dispara el evento
                     HideUI();
+                    OnPuzzleStarsSolved?.Invoke();  // Dispara el evento
+                    CorrectShow();
                 }
                 else
                 {
