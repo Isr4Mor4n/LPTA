@@ -1,14 +1,14 @@
 {
-    "name": "PlayerMovement",
+    "name": "JoystickInput",
     "maps": [
         {
             "name": "Movement",
-            "id": "6b9ed81d-5ef0-41ee-a5b1-f0411f345ca5",
+            "id": "a72eb626-3029-4591-b4ee-770d45f666fc",
             "actions": [
                 {
                     "name": "Input",
                     "type": "Value",
-                    "id": "becb4dae-6493-48d8-8fbd-9c6a57691fd3",
+                    "id": "ff92eb8c-0e70-4364-862d-5a467a976fe5",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -18,7 +18,7 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "bf270003-ed8d-4a31-9817-e8357c0d715d",
+                    "id": "db000220-ff1d-4b97-8c45-2a55d4e7fb97",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",

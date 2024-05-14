@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3708985, g: 0.3783704, b: 0.35722548, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -302,8 +302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraRotator: {fileID: 1290988420}
-  selfCamera: {fileID: 1437408496}
+  _CameraRotator: {fileID: 0}
+  _SelfCamera: {fileID: 0}
 --- !u!65 &4006853
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -993,8 +993,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraRotator: {fileID: 2086130934}
-  selfCamera: {fileID: 2086130933}
+  _CameraRotator: {fileID: 0}
+  _SelfCamera: {fileID: 0}
 --- !u!65 &121019477
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1583,7 +1583,7 @@ GameObject:
   m_Component:
   - component: {fileID: 203020205}
   - component: {fileID: 203020207}
-  - component: {fileID: 203020206}
+  - component: {fileID: 203020208}
   m_Layer: 0
   m_Name: Trigger PC (N1)
   m_TagString: Untagged
@@ -1606,20 +1606,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1223818181}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &203020206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203020204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc78202e1e421294d9b2a43b68c7b386, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiToActivate: {fileID: 870291603}
-  closeButton: {fileID: 1068323691}
 --- !u!65 &203020207
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1641,6 +1627,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.5527754, y: 2.4875627, z: 2.8268166}
   m_Center: {x: -5.9926953, y: 3.1451719, z: -5.950979}
+--- !u!114 &203020208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203020204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f811b22be45fbec44bd5465608eaedc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiToActivate: {fileID: 870291603}
+  closeButton: {fileID: 1068323691}
 --- !u!1 &206461101
 GameObject:
   m_ObjectHideFlags: 0
@@ -2267,7 +2267,7 @@ GameObject:
   - component: {fileID: 249221372}
   m_Layer: 0
   m_Name: Trigger Sector 1
-  m_TagString: Untagged
+  m_TagString: cameraChanger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2299,8 +2299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraRotator: {fileID: 332935389}
-  selfCamera: {fileID: 640650908}
+  _CameraRotator: {fileID: 332935389}
+  _SelfCamera: {fileID: 640650908}
 --- !u!65 &249221373
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2367,8 +2367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraRotator: {fileID: 2062725901}
-  selfCamera: {fileID: 2062725900}
+  _CameraRotator: {fileID: 0}
+  _SelfCamera: {fileID: 0}
 --- !u!65 &250066731
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3054,8 +3054,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraRotator: {fileID: 1343153988}
-  selfCamera: {fileID: 930108997}
+  _CameraRotator: {fileID: 0}
+  _SelfCamera: {fileID: 0}
 --- !u!65 &300918532
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3247,36 +3247,19 @@ PrefabInstance:
       addedObject: {fileID: 305811911}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 54ba2b90022b03d4c8c3b9d41f9a5615, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 305811910}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 54ba2b90022b03d4c8c3b9d41f9a5615, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 305811909}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 54ba2b90022b03d4c8c3b9d41f9a5615, type: 3}
       insertIndex: -1
       addedObject: {fileID: 305811908}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 54ba2b90022b03d4c8c3b9d41f9a5615, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 305811907}
+      addedObject: {fileID: 305811913}
   m_SourcePrefab: {fileID: 100100000, guid: 54ba2b90022b03d4c8c3b9d41f9a5615, type: 3}
 --- !u!1 &305811906 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 54ba2b90022b03d4c8c3b9d41f9a5615, type: 3}
   m_PrefabInstance: {fileID: 305811905}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &305811907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 305811906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d3c2a452ee33d64aa9f8edb6007144c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  cameraTransform: {fileID: 640650909}
 --- !u!143 &305811908
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3324,22 +3307,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &305811910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 305811906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55a69eb4b0c5467419f18b9aeb378295, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  currentCamera: {fileID: 640650911}
-  _animator: {fileID: 305811909}
-  characterController: {fileID: 305811908}
 --- !u!114 &305811911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3367,7 +3334,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 305811910}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: JoystickMovement, Assembly-CSharp
         m_MethodName: InputPlayer
         m_Mode: 0
@@ -3386,11 +3353,20 @@ MonoBehaviour:
   m_DefaultActionMap: Movement
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!4 &305811912 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 54ba2b90022b03d4c8c3b9d41f9a5615, type: 3}
-  m_PrefabInstance: {fileID: 305811905}
+--- !u!114 &305811913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305811906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c2b8bce4fe42c478fff033a63895c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  cameraTransform: {fileID: 332935389}
 --- !u!1 &327021069
 GameObject:
   m_ObjectHideFlags: 0
@@ -3490,13 +3466,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332935388}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
+  m_LocalRotation: {x: -0.21643952, y: 0, z: 0, w: 0.97629607}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1870632222}
-  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+  m_Father: {fileID: 640650909}
+  m_LocalEulerAnglesHint: {x: -25, y: 0, z: 0}
 --- !u!1 &362794765
 GameObject:
   m_ObjectHideFlags: 0
@@ -10304,12 +10280,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529647757}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
+  m_LocalRotation: {x: -0.2164396, y: -0, z: 0.000000007450581, w: 0.97629607}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1870632222}
+  m_Father: {fileID: 667421222}
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!1 &530871609
 GameObject:
@@ -11256,8 +11232,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraRotator: {fileID: 1302289958}
-  selfCamera: {fileID: 1302289957}
+  _CameraRotator: {fileID: 0}
+  _SelfCamera: {fileID: 0}
 --- !u!65 &589042889
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11590,10 +11566,11 @@ Transform:
   m_GameObject: {fileID: 640650908}
   serializedVersion: 2
   m_LocalRotation: {x: 0.19996412, y: 0.3736123, z: -0.08282785, w: 0.90198}
-  m_LocalPosition: {x: -10.8, y: 4.89, z: -2.71}
+  m_LocalPosition: {x: -10.5, y: 5, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 332935389}
   m_Father: {fileID: 1870632222}
   m_LocalEulerAnglesHint: {x: 25, y: 45, z: 0}
 --- !u!81 &640650910
@@ -12049,7 +12026,8 @@ Transform:
   m_LocalPosition: {x: -10.63, y: 4.58, z: -19.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 529647758}
   m_Father: {fileID: 1870632222}
   m_LocalEulerAnglesHint: {x: 25, y: 45, z: 0}
 --- !u!20 &667421223
@@ -13762,8 +13740,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraRotator: {fileID: 2068443775}
-  selfCamera: {fileID: 2068443774}
+  _CameraRotator: {fileID: 0}
+  _SelfCamera: {fileID: 0}
 --- !u!65 &832983744
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14515,8 +14493,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraRotator: {fileID: 206461102}
-  selfCamera: {fileID: 1526883239}
+  _CameraRotator: {fileID: 0}
+  _SelfCamera: {fileID: 0}
 --- !u!65 &886776601
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14812,7 +14790,7 @@ GameObject:
   m_Component:
   - component: {fileID: 903144368}
   - component: {fileID: 903144370}
-  - component: {fileID: 903144369}
+  - component: {fileID: 903144371}
   m_Layer: 0
   m_Name: Trigger PC (N5)
   m_TagString: Untagged
@@ -14835,20 +14813,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1223818181}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &903144369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 903144367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc78202e1e421294d9b2a43b68c7b386, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiToActivate: {fileID: 725122071}
-  closeButton: {fileID: 1938372792}
 --- !u!65 &903144370
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14870,6 +14834,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.5173028, y: 2.5271902, z: 2.628149}
   m_Center: {x: -1.14194, y: 3.1649857, z: -2.2501574}
+--- !u!114 &903144371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903144367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f811b22be45fbec44bd5465608eaedc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiToActivate: {fileID: 725122071}
+  closeButton: {fileID: 1938372792}
 --- !u!1 &905146457
 GameObject:
   m_ObjectHideFlags: 0
@@ -20593,8 +20571,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraRotator: {fileID: 102546921}
-  selfCamera: {fileID: 432013509}
+  _CameraRotator: {fileID: 0}
+  _SelfCamera: {fileID: 0}
 --- !u!65 &1007334262
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22495,8 +22473,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraRotator: {fileID: 845248301}
-  selfCamera: {fileID: 845248300}
+  _CameraRotator: {fileID: 0}
+  _SelfCamera: {fileID: 0}
 --- !u!65 &1172115839
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28170,7 +28148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1250986721}
   - component: {fileID: 1250986723}
-  - component: {fileID: 1250986722}
+  - component: {fileID: 1250986724}
   m_Layer: 0
   m_Name: Trigger PC (N9)
   m_TagString: Untagged
@@ -28193,20 +28171,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1223818181}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1250986722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1250986720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc78202e1e421294d9b2a43b68c7b386, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiToActivate: {fileID: 2029271332}
-  closeButton: {fileID: 1061235042}
 --- !u!65 &1250986723
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28228,6 +28192,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.57557, y: 2.6038928, z: 2.678729}
   m_Center: {x: -5.133184, y: 3.203337, z: -4.8643336}
+--- !u!114 &1250986724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250986720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f811b22be45fbec44bd5465608eaedc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiToActivate: {fileID: 2029271332}
+  closeButton: {fileID: 1061235042}
 --- !u!1 &1261624889
 GameObject:
   m_ObjectHideFlags: 0
@@ -31657,8 +31635,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraRotator: {fileID: 1680495415}
-  selfCamera: {fileID: 1680495414}
+  _CameraRotator: {fileID: 0}
+  _SelfCamera: {fileID: 0}
 --- !u!65 &1575284095
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31859,8 +31837,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraRotator: {fileID: 2084389805}
-  selfCamera: {fileID: 1095404103}
+  _CameraRotator: {fileID: 0}
+  _SelfCamera: {fileID: 0}
 --- !u!65 &1593091759
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32157,8 +32135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraRotator: {fileID: 1731569761}
-  selfCamera: {fileID: 795013242}
+  _CameraRotator: {fileID: 0}
+  _SelfCamera: {fileID: 0}
 --- !u!65 &1650828864
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38583,7 +38561,7 @@ GameObject:
   - component: {fileID: 1838379842}
   m_Layer: 0
   m_Name: Trigger Sector 2
-  m_TagString: Untagged
+  m_TagString: cameraChanger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38615,8 +38593,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraRotator: {fileID: 529647758}
-  selfCamera: {fileID: 667421221}
+  _CameraRotator: {fileID: 529647758}
+  _SelfCamera: {fileID: 667421221}
 --- !u!65 &1838379843
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39071,12 +39049,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 332935389}
   - {fileID: 640650909}
   - {fileID: 885784058}
   - {fileID: 930108998}
   - {fileID: 1095404104}
-  - {fileID: 529647758}
   - {fileID: 667421222}
   - {fileID: 1437408497}
   - {fileID: 795013243}
@@ -45187,8 +45163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraRotator: {fileID: 1721119139}
-  selfCamera: {fileID: 1372533704}
+  _CameraRotator: {fileID: 0}
+  _SelfCamera: {fileID: 0}
 --- !u!65 &1947346056
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50570,8 +50546,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraRotator: {fileID: 1261624890}
-  selfCamera: {fileID: 616001152}
+  _CameraRotator: {fileID: 0}
+  _SelfCamera: {fileID: 0}
 --- !u!65 &2007151363
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50842,8 +50818,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae124a0907b206045a03501e2edee0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraRotator: {fileID: 558252837}
-  selfCamera: {fileID: 885784057}
+  _CameraRotator: {fileID: 0}
+  _SelfCamera: {fileID: 0}
 --- !u!65 &2015733200
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52897,7 +52873,6 @@ GameObject:
   - component: {fileID: 2140886266}
   - component: {fileID: 2140886265}
   - component: {fileID: 2140886264}
-  - component: {fileID: 2140886263}
   m_Layer: 5
   m_Name: Joystick
   m_TagString: Untagged
@@ -52924,20 +52899,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2140886263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2140886261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebf5e70f0b88a4b418cc4ec9e48d9bc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTransform: {fileID: 305811912}
-  rotationSpeed: 400
 --- !u!114 &2140886264
 MonoBehaviour:
   m_ObjectHideFlags: 0

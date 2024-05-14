@@ -21,8 +21,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.tag == "cameraChanger")
         {
-            //other.GetComponent<CameraChanger>().Activate();
-            newCameraTransform = other.GetComponent<CameraChanger>().cameraRotator;
+            other.GetComponent<CameraChanger>().Activate();
+            newCameraTransform = other.GetComponent<CameraChanger>()._CameraRotator;
             cameraMustChange = true;
         }
     }
@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.tag == "cameraChanger")
         {
-           //other.GetComponent<CameraChanger>().Deactivate();
+            other.GetComponent<CameraChanger>().Deactivate();
         }
     }
 

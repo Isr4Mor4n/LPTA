@@ -1,19 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraChanger : MonoBehaviour
 {
-    public Transform cameraRotator;
-    public GameObject selfCamera;
+    public Transform _CameraRotator;
+    public GameObject _SelfCamera;
 
-    private void OnTriggerEnter(Collider other)
+    public void Activate()
     {
-        selfCamera.SetActive(true);
+        _SelfCamera.SetActive(true);
     }
 
-    private void OnTriggerExit(Collider other)
+    public void Deactivate()
     {
-        selfCamera.SetActive(false);
+        _SelfCamera.SetActive(false);
     }
 }
