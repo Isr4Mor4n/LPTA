@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,14 +13,34 @@ public class PlayerMovement : MonoBehaviour
     public Transform cameraTransform;
     Transform newCameraTransform;
 
+    JoystickInput controls;
+    Vector2 moveInput;
+
     private void Awake()
     {
         cc = GetComponent<CharacterController>();
+
+        // Inicializa los controles
+        controls = new JoystickInput();
+
+        // Asigna el callback para el movimiento del joystick
+        controls.Movement.Input.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
+        controls.Movement.Input.canceled += ctx => moveInput = Vector2.zero;
+    }
+
+    private void OnEnable()
+    {
+        controls.Movement.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Movement.Disable();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "cameraChanger")
+        if (other.CompareTag("cameraChanger"))
         {
             other.GetComponent<CameraChanger>().Activate();
             newCameraTransform = other.GetComponent<CameraChanger>()._CameraRotator;
@@ -29,50 +50,79 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "cameraChanger")
+        if (other.CompareTag("cameraChanger"))
         {
             other.GetComponent<CameraChanger>().Deactivate();
         }
     }
 
-    bool anykeyPressed = false;
-    // Update is called once per frame
     void Update()
     {
         direction = Vector3.zero;
-        anykeyPressed = false;
+        bool anyKeyPressed = false;
+
+        // Comprueba el input del teclado
         if (Input.GetKey(KeyCode.W))
         {
-            anykeyPressed = true;
+            anyKeyPressed = true;
             direction += cameraTransform.forward;
             Debug.Log("adelante");
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            anykeyPressed = true;
+            anyKeyPressed = true;
             direction += -cameraTransform.forward;
-            Debug.Log("atras");
+            Debug.Log("atrás");
         }
         if (Input.GetKey(KeyCode.D))
         {
-            anykeyPressed = true;
+            anyKeyPressed = true;
             direction += cameraTransform.right;
             Debug.Log("derecha");
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            anykeyPressed = true;
+            anyKeyPressed = true;
             direction += -cameraTransform.right;
             Debug.Log("izquierda");
         }
 
-        if (!anykeyPressed && cameraMustChange)
+        // Si no se presionan teclas, usa el input del joystick
+        if (!anyKeyPressed)
+        {
+            // Convierte el input del joystick a la dirección relativa de la cámara
+            Vector3 joystickDirection = new Vector3(moveInput.x, 0, moveInput.y);
+            joystickDirection = cameraTransform.TransformDirection(joystickDirection);
+
+            direction += joystickDirection.normalized;
+
+            if (moveInput.y > 0)
+            {
+                Debug.Log("adelante");
+            }
+            else if (moveInput.y < 0)
+            {
+                Debug.Log("atrás");
+            }
+            if (moveInput.x > 0)
+            {
+                Debug.Log("derecha");
+            }
+            else if (moveInput.x < 0)
+            {
+                Debug.Log("izquierda");
+            }
+        }
+
+        // Cambia la dirección de la cámara si es necesario
+        if (direction == Vector3.zero && cameraMustChange)
         {
             cameraTransform = newCameraTransform;
             cameraMustChange = false;
             newCameraTransform = null;
         }
 
-        cc.Move(direction.normalized * Time.deltaTime * speed);
+        // Mueve el CharacterController
+        cc.Move(direction * Time.deltaTime * speed);
     }
 }
