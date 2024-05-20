@@ -20,7 +20,7 @@ public class DoorActivator : MonoBehaviour
     void OnDisable()
     {
         PuzzleStarsManager.OnPuzzleStarsSolved -= ActivateDoorsObjects;
-        PuzzleStarsManager.OnPuzzleStarsSolved += DeactivateDoorsObjects;
+        PuzzleStarsManager.OnPuzzleStarsSolved -= DeactivateDoorsObjects;
 
     }
 

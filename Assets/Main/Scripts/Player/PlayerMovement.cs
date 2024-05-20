@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     JoystickInput controls;
     Vector2 moveInput;
 
+    [SerializeField] Animator _animatorPlayer;
+
     private void Awake()
     {
         cc = GetComponent<CharacterController>();
@@ -99,19 +101,37 @@ public class PlayerMovement : MonoBehaviour
             if (moveInput.y > 0)
             {
                 Debug.Log("adelante");
+                _animatorPlayer.SetFloat("Speed", 1);
             }
             else if (moveInput.y < 0)
             {
                 Debug.Log("atrás");
+                _animatorPlayer.SetFloat("Speed", 1);
             }
+
+            if (moveInput.y ==0)
+            {
+                _animatorPlayer.SetFloat("Speed", 0);
+            }
+
             if (moveInput.x > 0)
             {
                 Debug.Log("derecha");
+                _animatorPlayer.SetFloat("Speed", 1);
+
             }
             else if (moveInput.x < 0)
             {
                 Debug.Log("izquierda");
+                _animatorPlayer.SetFloat("Speed", 1);
+
             }
+
+            if (moveInput.x == 0)
+            {
+                _animatorPlayer.SetFloat("Speed", 0);
+            }
+
         }
 
         // Cambia la dirección de la cámara si es necesario
@@ -124,5 +144,6 @@ public class PlayerMovement : MonoBehaviour
 
         // Mueve el CharacterController
         cc.Move(direction * Time.deltaTime * speed);
+
     }
 }

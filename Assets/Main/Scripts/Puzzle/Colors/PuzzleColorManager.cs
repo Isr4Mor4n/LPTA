@@ -17,7 +17,7 @@ public class PuzzleColorManager : MonoBehaviour
     private int currentIndex = 0; // Índice actual del botón que el jugador debe presionar
     public static event Action OnPuzzleColorSolved;
     private int[] pressedOrder = new int[4];
-    public bool _colorSolved = false;
+    //public bool _colorSolved = false;
 
     private void Start()
     {
@@ -82,7 +82,7 @@ public class PuzzleColorManager : MonoBehaviour
                     Debug.Log("¡Puzzle resuelto!");
                     CorrectShow();
                     OnPuzzleColorSolved?.Invoke();  // Dispara el evento
-                    _colorSolved = true;
+                    //_colorSolved = true;
                     HideUI();
                 }
                 else

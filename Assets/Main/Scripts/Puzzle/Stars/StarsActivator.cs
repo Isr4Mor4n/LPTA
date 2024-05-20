@@ -6,16 +6,21 @@ public class StarsActivator : MonoBehaviour
 {
     [SerializeField] private PuzzleColorManager colorManager; // Referencia al script PuzzleColorManager
     public GameObject[] objectsToActivate;  // Objetos a activar
+    public GameObject[] objectsToDeactivate;  // Objetos a desactivar
 
-   
+
     void OnEnable()
     {
         PuzzleColorManager.OnPuzzleColorSolved += ActivateStarsObjects;
+        PuzzleColorManager.OnPuzzleColorSolved += DeactivateStarsObjects;
+
     }
 
     void OnDisable()
     {
        PuzzleColorManager.OnPuzzleColorSolved -= ActivateStarsObjects;
+       PuzzleColorManager.OnPuzzleColorSolved -= DeactivateStarsObjects;
+
     }
 
     void ActivateStarsObjects()
@@ -24,24 +29,13 @@ public class StarsActivator : MonoBehaviour
         {
             obj.SetActive(true);
         }
+    }
 
-        /*
-        if (colorManager._colorSolved == true) 
+    void DeactivateStarsObjects()
+    {
+        foreach (GameObject obj in objectsToDeactivate)
         {
-            Debug.Log("Activando Estrellas");
-            foreach (GameObject obj in objectsToActivate)
-            {
-                obj.SetActive(true);
-            }
+            obj.SetActive(false);
         }
-
-        else
-        {
-            foreach (GameObject obj in objectsToActivate)
-            {
-                obj.SetActive(false);
-            }
-        }
-        */
     }
 }
