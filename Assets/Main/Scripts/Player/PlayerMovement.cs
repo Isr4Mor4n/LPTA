@@ -18,6 +18,12 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] Animator _animatorPlayer;
 
+    // Variables para el sonido
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip moveSoundClip;
+    public float minPitch = 0.9f;
+    public float maxPitch = 1.1f;
+
     private void Awake()
     {
         cc = GetComponent<CharacterController>();
@@ -28,6 +34,11 @@ public class PlayerMovement : MonoBehaviour
         // Asigna el callback para el movimiento del joystick
         controls.Movement.Input.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
         controls.Movement.Input.canceled += ctx => moveInput = Vector2.zero;
+
+        // Inicializa el AudioSource
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.clip = moveSoundClip;
+        audioSource.loop = true;
     }
 
     private void OnEnable()
@@ -109,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
                 _animatorPlayer.SetFloat("Speed", 1);
             }
 
-            if (moveInput.y ==0)
+            if (moveInput.y == 0)
             {
                 _animatorPlayer.SetFloat("Speed", 0);
             }
@@ -118,20 +129,17 @@ public class PlayerMovement : MonoBehaviour
             {
                 Debug.Log("derecha");
                 _animatorPlayer.SetFloat("Speed", 1);
-
             }
             else if (moveInput.x < 0)
             {
                 Debug.Log("izquierda");
                 _animatorPlayer.SetFloat("Speed", 1);
-
             }
 
             if (moveInput.x == 0)
             {
                 _animatorPlayer.SetFloat("Speed", 0);
             }
-
         }
 
         // Cambia la dirección de la cámara si es necesario
@@ -145,5 +153,23 @@ public class PlayerMovement : MonoBehaviour
         // Mueve el CharacterController
         cc.Move(direction * Time.deltaTime * speed);
 
+        // Controla el sonido del movimiento
+        if (direction != Vector3.zero)
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
+
+            // Cambia el pitch aleatoriamente mientras se mueve
+            audioSource.pitch = Random.Range(minPitch, maxPitch);
+        }
+        else
+        {
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+        }
     }
 }
