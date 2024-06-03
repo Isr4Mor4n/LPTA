@@ -22,18 +22,44 @@ public class EnemyMovement : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         SetNextWaypoint();
+
+        // Suscribirse a los eventos de pausa y reanudación
+        PauseManager.OnGamePaused += PauseEnemy;
+        PauseManager.OnGameResumed += ResumeEnemy;
+    }
+
+    private void OnDestroy()
+    {
+        // Desuscribirse de los eventos de pausa y reanudación al destruir el objeto
+        PauseManager.OnGamePaused -= PauseEnemy;
+        PauseManager.OnGameResumed -= ResumeEnemy;
     }
 
     private void Update()
     {
+        // Verificar si el juego está pausado
+        if (!PauseManager.IsGamePaused)
+        {
+            if (!playerDetected)
+                MoveTowardsWaypoint();
+            else
+                MoveTowardsNearestWaypoint();
 
-        if (!playerDetected)
-            MoveTowardsWaypoint();
-        else
-            MoveTowardsNearestWaypoint();
+            DetectPlayer();
+            CheckPlayerProximity();
+        }
+    }
 
-        DetectPlayer();
-        CheckPlayerProximity();
+    private void PauseEnemy()
+    {
+        // Pausar la animación cuando el juego está pausado
+        _animator.speed = 0f;
+    }
+
+    private void ResumeEnemy()
+    {
+        // Reanudar la animación cuando el juego se reanuda
+        _animator.speed = 1f;
     }
 
     private void MoveTowardsWaypoint()
@@ -67,7 +93,6 @@ public class EnemyMovement : MonoBehaviour
         {
             moveDirection.Normalize();
             characterController.Move(moveDirection * speed * Time.deltaTime);
-
         }
     }
 
