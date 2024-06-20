@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3708985, g: 0.3783704, b: 0.35722548, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -681,8 +681,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Game
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 195aace9899ed9745878c6b207a34633, type: 2}
-  m_sharedMaterial: {fileID: -512412519007273773, guid: 195aace9899ed9745878c6b207a34633, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b90ac15923771944499caa99085174b2, type: 2}
+  m_sharedMaterial: {fileID: 2866067672421207938, guid: b90ac15923771944499caa99085174b2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1035,8 +1035,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "YOU ESCAPED \nALIVE!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 195aace9899ed9745878c6b207a34633, type: 2}
-  m_sharedMaterial: {fileID: -512412519007273773, guid: 195aace9899ed9745878c6b207a34633, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b90ac15923771944499caa99085174b2, type: 2}
+  m_sharedMaterial: {fileID: 2866067672421207938, guid: b90ac15923771944499caa99085174b2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1096,7 +1096,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 1.8016968, y: 0, z: 0, w: 0}
+  m_margin: {x: 1.8016968, y: -105.80858, z: 0, w: -113.77265}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1169,8 +1169,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Back to Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 195aace9899ed9745878c6b207a34633, type: 2}
-  m_sharedMaterial: {fileID: -512412519007273773, guid: 195aace9899ed9745878c6b207a34633, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b90ac15923771944499caa99085174b2, type: 2}
+  m_sharedMaterial: {fileID: 2866067672421207938, guid: b90ac15923771944499caa99085174b2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1326,7 +1326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.24697402, g: 0.6981132, b: 0.24697402, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
